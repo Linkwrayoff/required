@@ -1,0 +1,9 @@
+label.required::before{
+	content: " *";
+	color: red;
+}
+
+.star.second_span::before{
+	content: " *";
+	color: red;
+}
