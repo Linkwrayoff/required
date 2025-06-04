@@ -1,26 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Required</title>
-	<link rel="stylesheet" href="style.css">
+	<style>
+		label:has(input[required]) span::after {
+			content: " *";
+			color: inherit;
+		}
+	</style>
 </head>
+
 <body>
 	<form>
-		<label class="required">
-			<span class="first_span">123</span>
-			<input required>
-		</label>
-	</form>
-
-	<form id="js_form">
 		<label>
-			<span class="second_span" id="js_span">123</span>
-			<input id="js_input">
+			<span>Заголовок1</span>
+			<input required />
+		</label>
+		<label>
+			<span>Заголовок2</span>
+			<input />
 		</label>
 	</form>
-
-	<script src="script.js"></script>
 </body>
+
 </html>
