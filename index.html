@@ -6,7 +6,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Required</title>
 	<style>
-		label:has(input[required]) span::after {
+		label:has(input[data-required][required]) span::after {
+			content: attr(data-required);
+			color: inherit;
+		}
+
+		label:has(input[required]:not([data-required])) span::after {
 			content: " *";
 			color: inherit;
 		}
@@ -16,13 +21,14 @@
 <body>
 	<form>
 		<label>
-			<span>Заголовок1</span>
-			<input required />
+			<span data-required="$">Заголовок1</span>
+			<input data-required="$" required />
 		</label>
 		<label>
-			<span>Заголовок2</span>
-			<input />
+			<span data-required="$">Заголовок2</span>
+			<input required />
 		</label>
+		<input type="submit">
 	</form>
 </body>
 
